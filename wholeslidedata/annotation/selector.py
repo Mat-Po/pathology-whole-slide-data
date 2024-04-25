@@ -5,6 +5,8 @@ from rtree import index
 
 from wholeslidedata.annotation.types import Annotation
 
+CLASS_ORDER = ['rest', 'tumor_associated_stroma', 'inflammed_stroma', 'necrosis', 'healthy_glands', 'dcis', 'invasive_tumor']
+
 
 def sort_by_area_with_roi(annotations):
     def sort(item):
@@ -15,6 +17,9 @@ def sort_by_area_with_roi(annotations):
 
 def sort_by_label_value(annotations):
     return sorted(annotations, key=lambda item: item.label.value)
+
+def sort_by_label_name_in_reference_list(annotations, class_order=CLASS_ORDER):
+    return sorted(annotations, key=lambda item: class_order.index(item.label.name))
 
 
 class AnnotationSelector:
