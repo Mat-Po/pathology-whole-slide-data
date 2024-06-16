@@ -5,7 +5,7 @@ from rtree import index
 
 from wholeslidedata.annotation.types import Annotation
 
-CLASS_ORDER = ['rest', 'tumor_associated_stroma', 'inflammed_stroma', 'necrosis', 'healthy_glands', 'dcis', 'invasive_tumor']
+CLASS_ORDER = ['rest', 'tumor_associated_stroma', 'inflammed_stroma', 'healthy_glands', 'dcis', 'invasive_tumor', 'necrosis']
 
 
 def sort_by_area_with_roi(annotations):
